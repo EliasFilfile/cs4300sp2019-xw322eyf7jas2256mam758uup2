@@ -18,9 +18,15 @@ def search():
 	else:
 		output_message = "Your search: " + query
 		data = range(5)
-	return render_template('search.html', name=project_name, 
-		netid=net_id_1, 
-		output_message=output_message, data=data)
+	return render_template('search.html', 
+		name=project_name, 
+		netid_1=net_id_1, 
+		netid_2=net_id_2, 
+		netid_3=net_id_3, 
+		netid_4=net_id_4, 
+		netid_5=net_id_5, 
+		output_message=output_message, 
+		data=data)
 
 
 
