@@ -2,6 +2,20 @@
     <head>
         <link rel="stylesheet" href="/static/bootstrap.min.css">
         <link rel="stylesheet" href="/static/main.css">
+        <style type="text/css">
+            .result-block{
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+
+            .result-title{
+                font-size: 2em;
+            }
+
+            
+        </style>
     </head>
     <body>
         <div class="topcorner">
@@ -30,7 +44,12 @@
             <h1>{{output_message}}</h1>
             {% for d in data %}  
                 <br>
-                <p>{{d}}</p>
+                <div class="result-block">
+                     <br>
+                    <!-- <p>{{d}}</p> -->
+                    <div class="result-title">{{d['title']}}</div>
+                    <div class="result-abstract">{{d['abstract']}}</div>
+                </div>
             {% endfor %}
         {% endif %}
         </form>

@@ -1,4 +1,5 @@
-from . import *  
+from . import * 
+import json 
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 
@@ -17,9 +18,17 @@ def search():
 		output_message = 'HERE output_message'
 	else:
 		output_message = "Your search: " + query
+		result1 = {}
+		result1 ["title"] = "An Optimal Control View of Adversarial Machine Learning "
+		result1["abstract"]= "I describe an optimal control view of adversarial machine learning, where the\\ndynamical system is the machine learner, the input are adversarial actions, and\\nthe control costs are defined by the adversary's goals to do harm and be hard\\nto detect. This view encompasses many types of adversarial machine learning,\\nincluding test-item attacks, training-data poisoning, and adversarial reward\\nshaping. The view encourages adversarial machine learning researcher to utilize\\nadvances in control theory and reinforcement learning."
+		result1["link"] = ""
+		result2 = {}
+		result2 ["title"] = "An Optimal Control View of Adversarial Machine Learning "
+		result2["abstract"]= "I describe an optimal control view of adversarial machine learning, where the\\ndynamical system is the machine learner, the input are adversarial actions, and\\nthe control costs are defined by the adversary's goals to do harm and be hard\\nto detect. This view encompasses many types of adversarial machine learning,\\nincluding test-item attacks, training-data poisoning, and adversarial reward\\nshaping. The view encourages adversarial machine learning researcher to utilize\\nadvances in control theory and reinforcement learning."
 		
 
-		data = range(5)
+
+		data = [result1, result2]
 	return render_template('search.html', 
 		name=project_name, 
 		netid_1=net_id_1, 
