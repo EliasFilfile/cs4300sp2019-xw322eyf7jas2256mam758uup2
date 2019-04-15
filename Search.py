@@ -55,7 +55,7 @@ def search(arxiv_id, num_results = 10):
 		summary = soup.find("meta",  property="og:description")['content']
 
 	# Append the query 
-	results.append([title, link, summary])
+	# results.append([title, link, summary])
 
 	# Preprocess the query
 	vec_bow = dictionary.doc2bow(normalize(summary))
