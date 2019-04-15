@@ -1,0 +1,6 @@
+nltk
+pandas
+numpy
+gensim
+bs4
+urllib
