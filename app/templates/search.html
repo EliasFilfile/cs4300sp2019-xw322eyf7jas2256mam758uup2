@@ -14,6 +14,9 @@
                 font-size: 2em;
             }
 
+            .result-title a{
+                text-decoration: none;
+            }
             
         </style>
     </head>
@@ -46,9 +49,12 @@
                 <br>
                 <div class="result-block">
                      <br>
-                    <!-- <p>{{d}}</p> -->
-                    <div class="result-title">{{d['title']}}</div>
-                    <div class="result-abstract">{{d['abstract']}}</div>
+                    <div class="result-title">
+                        <a href="{{ d[1] }}" target="new">
+                            {{d[0]}}
+                        </a>
+                    </div>
+                    <div class="result-abstract">{{d[2]}}</div>
                 </div>
             {% endfor %}
         {% endif %}
