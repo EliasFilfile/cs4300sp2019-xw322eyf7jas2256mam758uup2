@@ -86,4 +86,3 @@ if __name__ == '__main__':
 	num_results = int(sys.argv[2])
 	# results is a list of list, results[0] has query details and results[1 to num_results] has final results.
 	results = search_func(query, num_results)
-	# print(results)
