@@ -17,6 +17,8 @@
             .result-title a{
                 text-decoration: none;
             }
+
+            
             
         </style>
     </head>
@@ -38,9 +40,13 @@
             <br><br>
             
             <div class="form-group">
-                <input id="input" type="text" name="search" class="form-control" placeholder="Your Input">
+                <input id="input" type="text" name="search" class="form-control" placeholder="Search for Papers...">
+               
             </div>
-            <button type="submit" class="btn btn-info"> Go! </button>
+            <button type="submit" class="btn btn-info"> Go! </button><br/>
+            <label class="radio-inline"><input type="radio" name="optradio" value="arXivID" checked>arXivID</label>
+            <label class="radio-inline"><input type="radio" name="optradio" value="title">title</label>
+            <label class="radio-inline"><input type="radio" name="optradio" value="keywords">keywords</label>
         </form>
         <form class="form-inline global-search">
         {% if data %}
