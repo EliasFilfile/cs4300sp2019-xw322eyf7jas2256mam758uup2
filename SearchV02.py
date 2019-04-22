@@ -61,13 +61,13 @@ def citation_search(title):
 
         # no citation found
         if (start == -1) or (end == -1):
-            return -1
+            return 0
 
         # citation found
         else:
             return int(page[start+9:start+end])
     except:
-        return -1
+        return 0
 
 
 def search(arxiv_id, num_results=10):
