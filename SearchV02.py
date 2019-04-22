@@ -45,27 +45,29 @@ def normalize(text):
 
 
 def citation_search(title):
+    try:
+        title = title.replace(" ", "+")
+        url_base = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q='
+        url = url_base + "\"" + title + "\""
 
-    title = title.replace(" ", "+")
-    url_base = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q='
-    url = url_base + "\"" + title + "\""
+        #print(url)
 
-    #print(url)
+        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 
-    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        # query the website and return the html to the variable ‘page’
+        page = str(urlopen(req).read())
+        start = page.find("Cited by ")
+        end = page[start:].find("<")
 
-    # query the website and return the html to the variable ‘page’
-    page = str(urlopen(req).read())
-    start = page.find("Cited by ")
-    end = page[start:].find("<")
+        # no citation found
+        if (start == -1) or (end == -1):
+            return -1
 
-    # no citation found
-    if (start == -1) or (end == -1):
+        # citation found
+        else:
+            return int(page[start+9:start+end])
+    except:
         return -1
-
-    # citation found
-    else:
-        return int(page[start+9:start+end])
 
 
 def search(arxiv_id, num_results=10):
