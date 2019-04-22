@@ -1,6 +1,6 @@
 from . import * 
 import json 
-import search_query as sq
+import SearchV02 as sq
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 
