@@ -109,7 +109,7 @@ def search(arxiv_id, num_results=10):
         ind, score = sims[i]
         if tot_results == num_results:
             break
-        if len(query_details) == 1 and df.loc[ind, 'id'] == query_details.loc[0, 'id']:
+        if len(query_details) == 1 and df.loc[ind, 'title'] == title:
             continue
 
         citation = citation_search(df.loc[ind, 'title'])
