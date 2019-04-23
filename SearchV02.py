@@ -93,7 +93,7 @@ def search(arxiv_id, num_results=10):
     vec_bow = dictionary.doc2bow(normalize(summary))
     vec_lsi = lsi[vec_bow]  # convert the query to LSI space
     sims = lsi_index[vec_lsi]  # perform a similarity query against the corpus
-    # sorted (document number, similarity score) 2-tuples
+    # sorted (document number, simlenilarity score) 2-tuples
     sims = sorted(enumerate(sims), key=lambda item: -item[1])
 
     # Print Query details
@@ -109,7 +109,7 @@ def search(arxiv_id, num_results=10):
         ind, score = sims[i]
         if tot_results == num_results:
             break
-        if len(query_details) == 1 and df.loc[ind, 'title'] == title:
+        if df.loc[ind, 'title'] == title:
             continue
 
         citation = citation_search(df.loc[ind, 'title'])
