@@ -18,8 +18,8 @@
                 text-decoration: none;
             }
 
-            
-            
+
+
         </style>
     </head>
     <body>
@@ -34,14 +34,14 @@
         <form class="form-inline global-search">
             <h1 style="font-size: 55px; font-family:Futura; color: #4285F4">
                Research Paper Recommendation
-                  
+
             </h1>
-            
+
             <br><br>
-            
+
             <div class="form-group">
                 <input id="input" type="text" name="search" class="form-control" placeholder="Search for Papers...">
-               
+
             </div>
             <button type="submit" class="btn btn-info"> Go! </button><br/>
             <label class="radio-inline"><input type="radio" name="optradio" value="arXivID" checked>arXivID</label>
@@ -51,17 +51,19 @@
         <form class="form-inline global-search">
         {% if data %}
             <h1>{{output_message}}</h1>
-            {% for d in data %}  
+            {% for d in data %}
                 <br>
                 <div class="result-block">
                      <br>
                     <div class="result-title">
                         <a href="{{ d[1] }}" target="new">
+                            <!--{{d[0]}}-->
                             {{d[0]}}
                         </a>
                     </div>
-                    <div class="result-abstract">{{d[2]}}</div>\
-                    <div class="citation">{{d[3]}}</div>
+                    <div class="result-abstract">{{d[2]}}</div>
+                    <div class="citation">Cited By: {{d[3]}}</div> <br>
+                    <div class="similarity">Similarity Score: {{d[4]}}</div>
                 </div>
             {% endfor %}
         {% endif %}
